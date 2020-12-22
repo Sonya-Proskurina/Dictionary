@@ -1,17 +1,20 @@
-package com.example.dictionary;
+package com.example.dictionary.Screen;
 
 import android.app.Activity;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SortedList;
+
+import com.example.dictionary.DataBase.App;
+import com.example.dictionary.DataBase.Dictionary;
+import com.example.dictionary.R;
 
 import java.util.List;
 

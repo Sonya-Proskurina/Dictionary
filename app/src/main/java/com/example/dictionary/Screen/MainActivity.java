@@ -1,17 +1,17 @@
-package com.example.dictionary;
+package com.example.dictionary.Screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.dictionary.DataBase.Dictionary;
+import com.example.dictionary.R;
 
 import java.util.List;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 
         recyclerView = findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -40,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void but(View view) {
-
-//        Intent intent = new Intent(MainActivity.this, Edition.class);
-//        startActivity(intent);
         Edition.start(MainActivity.this, null);
-
     }
 }

@@ -1,4 +1,4 @@
-package com.example.dictionary;
+package com.example.dictionary.Screen;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.dictionary.DataBase.App;
+import com.example.dictionary.DataBase.Dictionary;
+import com.example.dictionary.R;
 
 public class Edition extends AppCompatActivity {
 
@@ -34,6 +38,7 @@ public class Edition extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edition);
+        getSupportActionBar().hide();
 
 //        toolbar =findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);

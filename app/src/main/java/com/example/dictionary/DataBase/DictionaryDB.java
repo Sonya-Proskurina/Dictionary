@@ -1,4 +1,4 @@
-package com.example.dictionary;
+package com.example.dictionary.DataBase;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

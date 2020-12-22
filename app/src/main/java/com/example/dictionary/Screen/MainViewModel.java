@@ -1,7 +1,10 @@
-package com.example.dictionary;
+package com.example.dictionary.Screen;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.dictionary.DataBase.App;
+import com.example.dictionary.DataBase.Dictionary;
 
 import java.util.List;
 
