@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.dictionary.DataBase.App;
 import com.example.dictionary.DataBase.Dictionary;
 import com.example.dictionary.R;
 
@@ -42,5 +45,39 @@ public class MainActivity extends AppCompatActivity {
 
     public void but(View view) {
         Edition.start(MainActivity.this, null);
+    }
+
+//    public void UIThread(Activity activity) {
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        });
+//    }
+
+    public static void updateThread(final Dictionary dictionary) {
+        new Thread() {
+            @Override
+            public void run() {
+                App.getInstance().getDictionaryDao().update(dictionary);
+            }
+        }.start();
+    }
+    public static void insertThread(final Dictionary dictionary) {
+        new Thread() {
+            @Override
+            public void run() {
+                App.getInstance().getDictionaryDao().insert(dictionary);
+            }
+        }.start();
+    }
+    public static void deleteThread(final Dictionary dictionary) {
+        new Thread() {
+            @Override
+            public void run() {
+                App.getInstance().getDictionaryDao().delete(dictionary);
+            }
+        }.start();
     }
 }

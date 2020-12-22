@@ -1,7 +1,9 @@
 package com.example.dictionary.Screen;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +24,7 @@ public class Edition extends AppCompatActivity {
 
 
     Dictionary dictionary;
-    Toolbar toolbar;
+//    Toolbar toolbar;
     EditText editTextEng;
     EditText editTextRus;
     Button button;
@@ -68,9 +70,9 @@ public class Edition extends AppCompatActivity {
            dictionary.engWord=editTextEng.getText().toString();
            dictionary.rusWord=editTextRus.getText().toString();
            if (getIntent().hasExtra(WORD)){
-               App.getInstance().getDictionaryDao().update(dictionary);
+               MainActivity.updateThread(dictionary);
            }else {
-              App.getInstance().getDictionaryDao().insert(dictionary);
+              MainActivity.insertThread(dictionary);
            }
            finish();
         }
@@ -86,4 +88,6 @@ public class Edition extends AppCompatActivity {
     public void end(View view) {
         finish();
     }
+
+
 }

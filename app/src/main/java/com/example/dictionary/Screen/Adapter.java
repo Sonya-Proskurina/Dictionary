@@ -111,7 +111,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> 
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    App.getInstance().getDictionaryDao().delete(dictionary);
+                    MainActivity.deleteThread(dictionary);
                 }
             });
         }
