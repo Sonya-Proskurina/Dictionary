@@ -1,9 +1,7 @@
 package com.example.dictionary.Screen;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,13 +10,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import com.example.dictionary.DataBase.App;
 import com.example.dictionary.DataBase.Dictionary;
 import com.example.dictionary.R;
 
-public class Edition extends AppCompatActivity {
+public class EditionActivity extends AppCompatActivity {
 
     private static final String WORD = "Edition.WORD";
 
@@ -30,7 +26,7 @@ public class Edition extends AppCompatActivity {
     Button button;
 
     public static void start(Activity activity, Dictionary dictionary) {
-        Intent intent = new Intent(activity, Edition.class);
+        Intent intent = new Intent(activity, EditionActivity.class);
         if (dictionary!= null)
             intent.putExtra(WORD, dictionary);
         activity.startActivity(intent);

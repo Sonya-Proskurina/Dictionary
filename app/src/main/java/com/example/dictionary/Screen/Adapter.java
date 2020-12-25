@@ -12,7 +12,6 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SortedList;
 
-import com.example.dictionary.DataBase.App;
 import com.example.dictionary.DataBase.Dictionary;
 import com.example.dictionary.R;
 
@@ -20,7 +19,7 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> {
 
-    private SortedList<Dictionary> sortedList;
+  static SortedList<Dictionary> sortedList;
 
     public Adapter() {
         sortedList = new SortedList<>(Dictionary.class, new SortedList.Callback<Dictionary>() {
@@ -104,7 +103,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Edition.start((Activity) itemView.getContext(),dictionary);
+                    EditionActivity.start((Activity) itemView.getContext(),dictionary);
                 }
             });
 

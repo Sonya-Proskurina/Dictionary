@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screen.MainActivity"></activity>
+        <activity android:name=".Screen.TestActivity"></activity>
+        <activity android:name=".Screen.MainActivity" />
         <activity android:name=".Screen.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +20,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Screen.Edition"
+            android:name=".Screen.EditionActivity"
             android:theme="@style/AppTheme" />
     </application>
-
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 </manifest>
