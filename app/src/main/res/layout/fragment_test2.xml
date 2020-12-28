@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screen.FragmentTest2">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Screen.TestActivity"
+        android:orientation="vertical">
+<ImageView
+    android:id="@+id/image"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:src="@android:drawable/ic_media_play"
+    />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/Answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Перевод"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp"
+            app:met_baseColor="@color/colorPrimaryDark"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorAccent"
+            app:met_singleLineEllipsis="true" />
+
+        <Button
+            android:id="@+id/buttonSing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="Проверить" />
+    </LinearLayout>
+
+</FrameLayout>
