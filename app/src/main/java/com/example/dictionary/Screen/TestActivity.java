@@ -69,12 +69,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void newWor() {
-//        buttonChecking.setBackgroundResource(R.drawable.button);
-//        buttonChecking.setText("Проверить");
+        buttonSkip.setBackgroundResource(R.drawable.button);
+        buttonSkip.setText("Пропустить");
         buttonOn = true;
 //        editText.setText("");
         num = random(sortedList.size() - 1);
-        lesson = random(2);
+        lesson = random(3);
 //        if (lesson == 0)
 //            word.setText(sortedList.get(num).rusWord);
 //        else
@@ -92,7 +92,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment, fragment);
-        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 

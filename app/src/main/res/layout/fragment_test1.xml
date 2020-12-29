@@ -24,7 +24,8 @@
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Answer"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:hint="Перевод"
         android:text=""
@@ -38,7 +39,8 @@
 
     <Button
         android:id="@+id/buttonQuestion"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:text="Проверить" />

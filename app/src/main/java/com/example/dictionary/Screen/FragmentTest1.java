@@ -59,7 +59,6 @@ public class FragmentTest1 extends Fragment implements View.OnClickListener {
                     }
                 } else {
                     if (editText.getText().toString().equalsIgnoreCase(TestActivity.sortedList.get(TestActivity.num).rusWord)) {
-                        editText.setText("");
                         resume();
                     }
                 }
