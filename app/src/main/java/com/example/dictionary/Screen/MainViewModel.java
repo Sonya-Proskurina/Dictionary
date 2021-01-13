@@ -9,7 +9,7 @@ import com.example.dictionary.DataBase.Dictionary;
 import java.util.List;
 
 public class MainViewModel extends ViewModel {
-private LiveData<List<Dictionary>> data = App.getInstance().getDictionaryDao().getAllLiveData();
+    private LiveData<List<Dictionary>> data = App.getInstance().getDictionaryDao().getAllLiveData();
 
     public LiveData<List<Dictionary>> getData() {
         return data;

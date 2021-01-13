@@ -1,4 +1,8 @@
-package com.example.dictionary.Screen;
+package com.example.dictionary.Screen.Screens;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -7,18 +11,22 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import com.example.dictionary.DataBase.App;
 import com.example.dictionary.DataBase.Dictionary;
 import com.example.dictionary.R;
+import com.example.dictionary.Screen.Adapter;
+import com.example.dictionary.Screen.MainViewModel;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
+
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        recyclerView = findViewById(R.id.recyclerView);
+        ButterKnife.bind(this);
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -42,18 +51,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @OnClick(R.id.button)
     public void but(View view) {
         EditionActivity.start(MainActivity.this, null);
     }
-
-//    public void UIThread(Activity activity) {
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        });
-//    }
 
     public static void updateThread(final Dictionary dictionary) {
         new Thread() {
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
     }
+
     public static void insertThread(final Dictionary dictionary) {
         new Thread() {
             @Override
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
     }
+
     public static void deleteThread(final Dictionary dictionary) {
         new Thread() {
             @Override
@@ -80,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
+    @OnClick(R.id.buttonTest)
     public void butTest(View view) {
-        Intent intent = new Intent(this,TestActivity.class);
+        Intent intent = new Intent(this, TestActivity.class);
         startActivity(intent);
     }
 }

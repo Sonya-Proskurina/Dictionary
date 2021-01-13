@@ -14,14 +14,21 @@ import androidx.recyclerview.widget.SortedList;
 
 import com.example.dictionary.DataBase.Dictionary;
 import com.example.dictionary.R;
+import com.example.dictionary.Screen.Screens.EditionActivity;
+import com.example.dictionary.Screen.Screens.MainActivity;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> {
 
-  static SortedList<Dictionary> sortedList;
+    public static SortedList<Dictionary> sortedList;
 
     public Adapter() {
+
         sortedList = new SortedList<>(Dictionary.class, new SortedList.Callback<Dictionary>() {
             @Override
             public int compare(Dictionary o1, Dictionary o2) {
@@ -67,7 +74,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> 
     @Override
     public DictionaryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new DictionaryViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dictionary_list, parent,false)
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dictionary_list, parent, false)
         );
     }
 
@@ -82,45 +89,41 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DictionaryViewHolder> 
         return sortedList.size();
     }
 
-    public void setItems(List<Dictionary> dictionaryList){
+    public void setItems(List<Dictionary> dictionaryList) {
         sortedList.replaceAll(dictionaryList);
 
     }
 
     static class DictionaryViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewE;
-        TextView textViewR;
-        View delete;
 
-        Dictionary dictionary;
+        @BindView(R.id.text_eng_item)
+        TextView textViewE;
+        @BindView(R.id.text_rus_item)
+        TextView textViewR;
+
+       private Dictionary dictionary;
 
         public DictionaryViewHolder(@NonNull final View itemView) {
             super(itemView);
-            textViewE = itemView.findViewById(R.id.text_eng_item);
-            textViewR = itemView.findViewById(R.id.text_rus_item);
-            delete = itemView.findViewById(R.id.button_delete);
+            ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    EditionActivity.start((Activity) itemView.getContext(),dictionary);
-                }
-            });
-
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    MainActivity.deleteThread(dictionary);
+                    EditionActivity.start((Activity) itemView.getContext(), dictionary);
                 }
             });
         }
 
-        public void  bind(Dictionary dictionary){
-            this.dictionary = dictionary;
+        @OnClick(R.id.button_delete)
+        public void delete(){
+            MainActivity.deleteThread(dictionary);
+        }
 
+        public void bind(Dictionary dictionary) {
+            this.dictionary = dictionary;
             textViewE.setText(dictionary.engWord);
             textViewR.setText(dictionary.rusWord);
-
         }
     }
 }

@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Screen.FragmentTest1">
+    tools:context=".Screen.Fragmants.FragmentTest1">
     <LinearLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Screen.TestActivity"
+        tools:context=".Screen.Screens.TestActivity"
         android:orientation="vertical">
     <TextView
         android:id="@+id/Question"
