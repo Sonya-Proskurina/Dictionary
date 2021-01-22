@@ -1,5 +1,4 @@
-package com.example.dictionary.Screen.Fragmants;
-
+package com.example.dictionary.screen.fragment;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -11,23 +10,22 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.example.dictionary.R;
-import com.example.dictionary.Screen.Screens.TestActivity;
+import com.example.dictionary.screen.activity.TestActivity;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class FragmentTest2 extends Fragment {
 
     @BindView(R.id.Answer2)
     MaterialEditText editText;
+
     public Button buttonSkip;
     private TextToSpeech textToSpeech;
-
-    public FragmentTest2() {
-
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,19 +36,14 @@ public class FragmentTest2 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_test2,
-                container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_test2, container, false);
 
         buttonSkip = getActivity().findViewById(R.id.buttonSkip);
         ButterKnife.bind(this, view);
 
-        textToSpeech = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
+        textToSpeech = new TextToSpeech(getActivity(), status -> {
 
-            }
         });
 
         return view;
@@ -58,7 +51,7 @@ public class FragmentTest2 extends Fragment {
 
     @OnClick(R.id.buttonSing)
     public void sing() {
-        if (editText.getText().toString().equalsIgnoreCase(TestActivity.sortedList.get(TestActivity.num).engWord)) {
+        if (editText.getText().toString().equalsIgnoreCase(TestActivity.sortedList.get(TestActivity.num).getEngWord())) {
             editText.setText("");
             buttonSkip.setBackgroundResource(R.drawable.button_green);
             buttonSkip.setText("Продолжить");
@@ -68,6 +61,6 @@ public class FragmentTest2 extends Fragment {
 
     @OnClick(R.id.image)
     public void image() {
-        textToSpeech.speak(TestActivity.sortedList.get(TestActivity.num).engWord, TextToSpeech.QUEUE_FLUSH, null);
+        textToSpeech.speak(TestActivity.sortedList.get(TestActivity.num).getEngWord(), TextToSpeech.QUEUE_FLUSH, null);
     }
 }

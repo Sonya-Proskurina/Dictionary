@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Screen.Screens.MainActivity">
+    tools:context=".screen.activity.MainActivity">
 
     <Button
         android:id="@+id/button"
@@ -31,6 +31,5 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

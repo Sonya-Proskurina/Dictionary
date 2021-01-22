@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Screen.Fragmants.FragmentTest1">
-    <LinearLayout
-        android:id="@+id/root"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Screen.Screens.TestActivity"
-        android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".screen.fragment.FragmentTest1">
+
     <TextView
         android:id="@+id/Question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
         android:layout_gravity="center_horizontal"
-        android:text=""
-        android:textAlignment="center"
+        android:layout_margin="32dp"
+        android:gravity="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Answer"
         android:layout_width="200dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:hint="Перевод"
-        android:text=""
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimary"
         android:textSize="20sp"
@@ -40,9 +35,9 @@
     <Button
         android:id="@+id/buttonQuestion"
         android:layout_width="200dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/button"
         android:text="Проверить" />
-    </LinearLayout>
-</FrameLayout>
+
+</LinearLayout>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/headQuestion"
@@ -8,15 +7,14 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="100dp"
     android:orientation="vertical"
-    tools:context=".Screen.Screens.TestActivity">
+    tools:context=".screen.activity.TestActivity">
 
     <TextView
+        android:id="@+id/textTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text=""
-        android:textAlignment="center"
-        android:id="@+id/textTest"
+        android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
@@ -29,8 +27,8 @@
     <Button
         android:id="@+id/buttonSkip"
         android:layout_width="200dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:text="Пропустить" />
@@ -38,9 +36,10 @@
     <Button
         android:id="@+id/buttonExit"
         android:layout_width="200dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:text="Выход" />
+
 </LinearLayout>

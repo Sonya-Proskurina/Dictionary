@@ -1,4 +1,4 @@
-package com.example.dictionary.Screen.Screens;
+package com.example.dictionary.screen.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,15 +15,15 @@ import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private Intent intent;
+
     @BindView(R.id.start_image)
-    public ImageView imageView;
-    public Intent intent;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getSupportActionBar().hide();
 
         ButterKnife.bind(this);
 

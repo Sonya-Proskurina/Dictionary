@@ -1,4 +1,4 @@
-package com.example.dictionary.DataBase;
+package com.example.dictionary.room;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,7 +8,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.dictionary.DataBase.Dictionary;
+import com.example.dictionary.model.Dictionary;
 
 import java.util.List;
 
@@ -35,6 +35,4 @@ public interface DictionaryDao {
 
     @Delete
     void delete(Dictionary note);
-
-
 }

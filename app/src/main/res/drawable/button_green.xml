@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:color="@color/textGreenDark"
-    tools:targetApi="lollipop">
+    android:color="@color/textGreenDark">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/textGreen"></solid>
+            <solid android:color="@color/textGreen" />
             <stroke
-                android:width="5dp"
-                android:color="@color/textGreenDark"></stroke>
-            <corners android:radius="5dp"></corners>
+                android:width="@dimen/button_stroke_width"
+                android:color="@color/textGreenDark" />
+            <corners android:radius="@dimen/button_corner_radius" />
         </shape>
-
     </item>
-
 </ripple>
