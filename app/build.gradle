@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    // We should add Lombok dependencies first of all
+
     // Lombok
     def lombok_version = "1.18.16"
     compileOnly "org.projectlombok:lombok:$lombok_version"
@@ -63,7 +63,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
-    // TODO CHANGE WITH MATERIAL LIBRARY
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 //    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 
